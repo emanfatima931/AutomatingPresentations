@@ -1,0 +1,14 @@
+{
+  "topics": [
+    {"id": 1, "title": "Intelligent Automation: Combining RPA with Generative AI and LLMs"},
+    {"id": 2, "title": "Designing End-to-End Enterprise Workflows with Cloud-Native RPA Platforms"},
+    {"id": 3, "title": "Process Mining and Task Mining for Data-Driven RPA Discovery"},
+    {"id": 4, "title": "Building Resilient, API-First Bots: From Screen Scraping to Modern Integrations"},
+    {"id": 5, "title": "Governance, Security, and Compliance Frameworks for Large-Scale RPA Programs"},
+    {"id": 6, "title": "Citizen Development in RPA: Low-Code/No-Code Best Practices and Guardrails"},
+    {"id": 7, "title": "Scaling RPA in the Cloud: Orchestration, Monitoring, and Observability"},
+    {"id": 8, "title": "Human-in-the-Loop Automation: Designing Collaborative RPA Workflows"},
+    {"id": 9, "title": "Measuring ROI and Business Value of RPA and Intelligent Automation"},
+    {"id": 10, "title": "Secure Bot Development: Identity, Access Management, and Data Protection in RPA"}
+  ]
+}

@@ -1,0 +1,111 @@
+[
+  {
+    "slide": 1,
+    "title": "Title Slide",
+    "points": [
+      "Intelligent Automation: Combining RPA with Generative AI and LLMs",
+      "Professional Workshop for Technology and Business Practitioners",
+      "Focus: From Rule-Based Bots to Cognitive, Self-Improving Workflows",
+      "Instructor: [Your Name], Expert in Automation and AI Solutions"
+    ]
+  },
+  {
+    "slide": 2,
+    "title": "Outline",
+    "points": [
+      "Foundations of RPA and Generative AI / LLMs",
+      "How Intelligent Automation Has Evolved",
+      "Key Tools, Platforms, and Architectural Patterns",
+      "Market Demand, Roles, and Skills Landscape",
+      "Real-World Case Studies and Implementation Lessons"
+    ]
+  },
+  {
+    "slide": 3,
+    "title": "Introduction – Domain 1: Robotic Process Automation (RPA)",
+    "points": [
+      "RPA automates repetitive, rule-based tasks by mimicking human actions on UIs and systems",
+      "Typical use cases: data entry, form filling, report generation, system-to-system integration",
+      "Strengths: speed, accuracy, compliance, and non-invasive integration with legacy systems",
+      "Limitations: struggles with unstructured data, exceptions, and tasks needing judgment",
+      "RPA as the execution backbone for end-to-end business process automation"
+    ]
+  },
+  {
+    "slide": 4,
+    "title": "Introduction – Domain 2: Generative AI and LLMs",
+    "points": [
+      "Generative AI creates new content (text, code, images) from learned patterns in data",
+      "Large Language Models (LLMs) understand and generate human-like language at scale",
+      "Core capabilities: summarization, classification, extraction, reasoning, and dialogue",
+      "Strengths: handling unstructured data, ambiguity, and knowledge-intensive tasks",
+      "Limitations: hallucinations, data privacy concerns, and need for governance and guardrails"
+    ]
+  },
+  {
+    "slide": 5,
+    "title": "Evolution",
+    "points": [
+      "Phase 1: Scripted automation and macros for simple, repetitive tasks",
+      "Phase 2: Enterprise RPA platforms with orchestrators, queues, and governance",
+      "Phase 3: Intelligent Automation by adding OCR, NLP, and basic ML to RPA",
+      "Phase 4: Generative AI and LLMs enabling reasoning, conversation, and content creation",
+      "Current state: Hybrid architectures where LLMs decide and RPA executes actions"
+    ]
+  },
+  {
+    "slide": 6,
+    "title": "Trending Tools and Technologies",
+    "points": [
+      "RPA platforms: UiPath, Automation Anywhere, Blue Prism, Microsoft Power Automate",
+      "LLM providers: OpenAI, Anthropic, Google Gemini, Meta Llama, open-source models",
+      "Integration patterns: API-based orchestration, AI-powered copilots, and AI centers of excellence",
+      "Supporting tech: vector databases, prompt orchestration, monitoring and observability tools",
+      "Security and governance: policy engines, data masking, and responsible AI frameworks"
+    ]
+  },
+  {
+    "slide": 7,
+    "title": "Market Demand",
+    "points": [
+      "Enterprises seek cost reduction, speed, and resilience through intelligent automation",
+      "High adoption in banking, insurance, healthcare, telecom, and shared services",
+      "Growing demand for hybrid skills: process analysis, RPA development, and AI engineering",
+      "Vendors and consultancies building specialized intelligent automation practices",
+      "Regulatory and compliance pressures driving demand for auditable AI-enabled workflows"
+    ]
+  },
+  {
+    "slide": 8,
+    "title": "Case Study 1",
+    "points": [
+      "Scenario: Financial services firm automating loan application processing",
+      "RPA bots collect documents, update core banking systems, and trigger workflows",
+      "LLM-based component reads unstructured documents and extracts key data fields",
+      "Outcome: 60–70% reduction in processing time and fewer manual data-entry errors",
+      "Lesson: Clear exception-handling rules and human-in-the-loop review are critical"
+    ]
+  },
+  {
+    "slide": 9,
+    "title": "Case Study 2",
+    "points": [
+      "Scenario: Global telecom provider enhancing customer support operations",
+      "LLM-powered virtual agent handles natural language queries across channels",
+      "RPA bots execute back-office actions: plan changes, refunds, and ticket updates",
+      "Outcome: Higher first-contact resolution, reduced call-center load, improved CSAT",
+      "Lesson: Continuous training on real conversations improves accuracy and containment"
+    ]
+  },
+  {
+    "slide": 10,
+    "title": "Case Study 3",
+    "points": [
+      "Scenario: Manufacturing company optimizing procure-to-pay (P2P) process",
+      "RPA automates vendor onboarding, PO creation, and invoice posting in ERP",
+      "Generative AI summarizes contracts, flags risky clauses, and suggests terms",
+      "Outcome: Faster cycle times, better compliance with procurement policies, cost savings",
+      "Lesson: Combining process mining with AI and RPA reveals additional automation opportunities"
+    ]
+  }
+]

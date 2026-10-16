@@ -1,0 +1,935 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C9DFEA0188E_v2_sub_generateChatCompletion_Create.Bundle;assembly=C9DFEA0188E_v2_sub_g.Yh0Sw14SOAJ15RLkKsmU1n2" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UiPathEventConnector" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEvent" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectType" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectId" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathAdditionalEventData" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.UiPathEventConnector>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventConnector>
+  <this:Main.UiPathEvent>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEvent>
+  <this:Main.UiPathEventObjectType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectType>
+  <this:Main.UiPathEventObjectId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectId>
+  <this:Main.UiPathAdditionalEventData>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathAdditionalEventData>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C2579B0AFF4_generateTextCompletion_Create.Bundle</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CE635E9A10C_chat_sub_completions_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C9DFEA0188E_v2_sub_generateChatCompletion_Create.Bundle</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.Workflow.Runtime</x:String>
+      <x:String>System.Activities.Tracking</x:String>
+      <x:String>System.Activities.Statements.Tracking</x:String>
+      <x:String>System.Activities.Runtime</x:String>
+      <x:String>System.Activities.Runtime.DurableInstancing</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.ParallelTracking</x:String>
+      <x:String>System.Activities.Hosting</x:String>
+      <x:String>System.Activities.Persistence</x:String>
+      <x:String>System.Activities.DurableInstancing</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Security.Authentication.ExtendedProtection</x:String>
+      <x:String>System.Timers</x:String>
+      <x:String>System.ComponentModel.Design</x:String>
+      <x:String>System.Xml.Schema</x:String>
+      <x:String>System.Xml.Xsl</x:String>
+      <x:String>System.Xml.Xsl.Runtime</x:String>
+      <x:String>System.Xml.XPath</x:String>
+      <x:String>System.Xml.Resolvers</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.CodeAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic.Syntax</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>System.Security.Authentication</x:String>
+      <x:String>System.Net.Cache</x:String>
+      <x:String>System.Net.NetworkInformation</x:String>
+      <x:String>System.Net.Security</x:String>
+      <x:String>System.Net.Sockets</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Windows.Documents</x:String>
+      <x:String>System.Windows.Media.Animation</x:String>
+      <x:String>System.Windows</x:String>
+      <x:String>System.Windows.Threading</x:String>
+      <x:String>UiPath.Presentations</x:String>
+      <x:String>UiPath.Presentations.Activities</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>C2579B0AFF4_generate.Oyn2h3QFCiP1A284mSNcGa2</AssemblyReference>
+      <AssemblyReference>CE635E9A10C_chat_sub.8eY1Bgt8cO1pO7sr17VyTp2</AssemblyReference>
+      <AssemblyReference>C9DFEA0188E_v2_sub_g.Yh0Sw14SOAJ15RLkKsmU1n2</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Validation</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Security.Principal.Windows</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.IO.MemoryMappedFiles</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Registry</AssemblyReference>
+      <AssemblyReference>System.IO.Pipes</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Threading.AccessControl</AssemblyReference>
+      <AssemblyReference>System.Threading</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Parallel</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Security.Claims</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Text.Json</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Resources.Writer</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.StackTrace</AssemblyReference>
+      <AssemblyReference>System.Collections.Concurrent</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Net.Security</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.Features</AssemblyReference>
+      <AssemblyReference>System.Net.NetworkInformation</AssemblyReference>
+      <AssemblyReference>System.Net.Ping</AssemblyReference>
+      <AssemblyReference>System.Net.Sockets</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>PresentationUI</AssemblyReference>
+      <AssemblyReference>System.Windows.Presentation</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap:VirtualizedContainerService.HintSize="920.6666666666666,5898.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="UserKeywords" />
+      <Variable x:TypeArguments="x:String" Name="generatedTopics" />
+      <Variable x:TypeArguments="x:String" Name="SelectedTopic" />
+      <Variable x:TypeArguments="s:String[]" Name="TopicsList" />
+      <Variable x:TypeArguments="x:String" Name="presenrationContent" />
+      <Variable x:TypeArguments="njl:JArray" Name="contentArray" />
+      <Variable x:TypeArguments="x:String" Name="SafeFileName" />
+      <Variable x:TypeArguments="x:String" Name="ContentFilePath" />
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;Artificial Intelligence&quot;, &quot;Computer Networks&quot;, &quot;Deep Learning&quot;, &quot;Machine Learning&quot;, &quot;Robotic Process Automation&quot;, &quot;Software Engineering&quot;}]" Name="SuggestedKeywords" />
+      <Variable x:TypeArguments="x:String" Name="SelectedFolder" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap:VirtualizedContainerService.HintSize="452,78.66666666666667" sap2010:WorkflowViewState.IdRef="ManualTrigger_3" />
+    <ui:InputDialog OptionsString="{x:Null}" TopMost="{x:Null}" sap2010:Annotation.AnnotationText="Input Dialog (ID): User Keywords&#xA;&#xA;This activity displays a Graphical User Interface (GUI) dialog box to collect user input at runtime. &#xA;&#xA;The entered text is captured and stored in the variable 'UserKeywords' (a String data type). &#xA;&#xA;This is the starting point of our Robotic Process Automation (RPA) workflow, where we gather the keywords that will drive the Artificial Intelligence (AI) topic generation process." DisplayName="Input Dialog - User Keywords" sap:VirtualizedContainerService.HintSize="452,265.3333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Enter/Select Keywords" Options="[SuggestedKeywords]" Title="Automating Presentation">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[UserKeywords]</OutArgument>
+      </ui:InputDialog.Result>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InputDialog>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="452,124" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Keywords: &quot; + UserKeywords]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="452,124" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="Generating Topics usng LLM Content Generation Activity">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <isactr:ConnectorActivity sap2010:Annotation.AnnotationText="Step 2 — AI Connector Activity (CA): &#xA;&#xA;This activity communicates with OpenAI's GPT (Generative Pre-trained Transformer) model via UiPath Integration Service using an API (Application Programming Interface) call. &#xA;&#xA;The user's keywords stored in UserKeywords are embedded into a structured prompt and sent to the LLM (Large Language Model). &#xA;&#xA;The raw JSON (JavaScript Object Notation) response is stored in generatedTopics (String). &#xA;&#xA;Model parameters configured: Model = gpt-5.1-2025-11-13 (AI model version); &#xA;&#xA;Instruction = system-level role definition for the AI; Temperature = 0 (deterministic, consistent output — no randomness); &#xA;&#xA;Top-P = 1 (considers full probability distribution); Frequency Penalty = 0 (no penalty for repeated words); Presence Penalty = 0 (no penalty for reusing topics); &#xA;&#xA;N = 1 (generate one completion only); &#xA;&#xA;PII (Personally Identifiable Information) = False — PII refers to sensitive data such as names, emails, or ID numbers; disabling this means no PII filtering is applied to the prompt or response." Configuration="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" ConnectionId="ec489d79-5e04-4eb2-a2b6-109dfea0188e" DisplayName="Content Generation - List of Topics" sap:VirtualizedContainerService.HintSize="452,962.6666666666666" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="prompt" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" xml:space="preserve">["Role: You are an expert technology research assistant.
+
+Task:
+Based on the user provided keywords, generate a list of the most relevant and trending workshop presentation topics.
+
+User Keywords:
+""" + UserKeywords.ToString + """
+
+Instructions:
+1. Analyze the keywords and identify current industry and technology trends related to them.
+2. Generate exactly 10 workshop presentation topics.
+3. Topics must be suitable for a professional or academic workshop.
+4. Prefer modern technologies, tools, frameworks, AI, automation, cloud computing, data science, cybersecurity, or other emerging trends when relevant.
+5. Topic titles must be concise and clear.
+
+Output Format (STRICT JSON ONLY):
+
+{
+  ""topics"": [
+    {""id"": 1, ""title"": ""Topic title""},
+    {""id"": 2, ""title"": ""Topic title""},
+    {""id"": 3, ""title"": ""Topic title""},
+    {""id"": 4, ""title"": ""Topic title""},
+    {""id"": 5, ""title"": ""Topic title""},
+    {""id"": 6, ""title"": ""Topic title""},
+    {""id"": 7, ""title"": ""Topic title""},
+    {""id"": 8, ""title"": ""Topic title""},
+    {""id"": 9, ""title"": ""Topic title""},
+    {""id"": 10, ""title"": ""Topic title""}
+  ]
+}
+
+Return only valid JSON. Do not include explanations or markdown."]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="isPIIEnabled" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="isFilterPIIEnabled" Type="FieldArgument" />
+        <isactr:FieldObject Name="languageCode" Type="FieldArgument" />
+        <isactr:FieldObject Name="piiEntityCategories_array" Type="FieldArgument" />
+        <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument" />
+        <isactr:FieldObject Name="topK" Type="FieldArgument" />
+        <isactr:FieldObject Name="contextGrounding" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">None</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="_file" Type="FieldArgument" />
+        <isactr:FieldObject Name="folderKey" Type="FieldArgument" />
+        <isactr:FieldObject Name="topP" Type="FieldArgument" />
+        <isactr:FieldObject Name="indexID" Type="FieldArgument" />
+        <isactr:FieldObject Name="numberOfResults" Type="FieldArgument" />
+        <isactr:FieldObject Name="top_p" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="modelName" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">gpt-5.1-2025-11-13</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="instruction" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">You are a helpful assistant</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="max_tokens" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="temperature" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="presence_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="n" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="_stop" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_text" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[generatedTopics]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_maskedText" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_v2_sub_generateChatCompletion" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:v2_sub_generateChatCompletion_Create" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_contextGroundingCitationsString" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </isactr:ConnectorActivity>
+    <ui:WriteTextFile FileName="{x:Null}" Output="{x:Null}" DisplayName="Write Text File" File="[LocalResource.FromPath(&quot;ListOfGeneratedTopics.txt&quot;)]" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[generatedTopics]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WriteTextFile>
+    <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[TopicsList]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[Newtonsoft.Json.Linq.JObject.Parse(generatedTopics)("topics").Select(Function(t) t("title").ToString()).ToArray()]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ui:InputDialog OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Displays a dropdown Input Dialog (ID) populated with TopicsList (String Array). &#xA;&#xA;User selects one topic which is stored in SelectedTopic (String) — passed to the next Content Generation (CG) AI call." DisplayName="Input Dialog - Select Topic" sap:VirtualizedContainerService.HintSize="452,442.6666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Select Topic" Options="[TopicsList]" Title="Automating Presentation" TopMost="False">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[SelectedTopic]</OutArgument>
+      </ui:InputDialog.Result>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InputDialog>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="452,124" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Selected Topic: &quot; + SelectedTopic]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="452,124" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="Generating Content on Selected Topic usng LLM Content Generation Activity">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <isactr:ConnectorActivity sap2010:Annotation.AnnotationText="Content Generation on Selected Topic (CG-2): &#xA;&#xA;Second AI Connector Activity (CA) that sends SelectedTopic (String) to the LLM (Large Language Model) via API (Application Programming Interface) call. &#xA;&#xA;A structured prompt instructs the AI to generate exactly 10 slides with 4–6 bullet points each, covering Title, Outline, Introduction, Evolution, Trending Tools, Market Demand, and 3 Case Studies. &#xA;&#xA;Response is stored in presenrationContent (String) as strict JSON (JavaScript Object Notation). &#xA;&#xA;Parameters: &#xA;Model = gpt-5.1-2025-11-13; Temperature = 0 (deterministic); &#xA;Top-P = 1; Frequency Penalty = 0; Presence Penalty = 0; N = 1; &#xA;PII (Personally Identifiable Information) = False." Configuration="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" ConnectionId="ec489d79-5e04-4eb2-a2b6-109dfea0188e" DisplayName="Content Generation - On Selected Topic" sap:VirtualizedContainerService.HintSize="452,799.3333333333334" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="prompt" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" xml:space="preserve">["Role: You are an expert technology educator and workshop presentation designer.
+
+Task:
+Generate structured PowerPoint presentation content for a technical workshop.
+
+Selected Topic:
+""" + SelectedTopic.ToString + """
+
+Instructions:
+1. Create presentation content suitable for a professional workshop.
+2. The presentation must contain exactly the following slides:
+   - Title Slide
+   - Outline
+   - Introduction slides for each main domain in the topic
+   - Evolution
+   - Trending Tools and Technologies
+   - Market Demand
+   - Case Study 1
+   - Case Study 2
+   - Case Study 3
+3. Each slide must contain 4–6 concise bullet points.
+4. Bullet points must be clear, informative, and presentation-ready.
+5. Content must be educational and suitable for teaching.
+
+Output Format (STRICT JSON ONLY):
+
+{
+  ""slides"": [
+    {""slide"": 1, ""title"": ""Title Slide"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]},
+    {""slide"": 2, ""title"": ""Outline"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]},
+    {""slide"": 3, ""title"": ""Introduction – Domain 1"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]},
+    {""slide"": 4, ""title"": ""Introduction – Domain 2"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]},
+    {""slide"": 5, ""title"": ""Evolution"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]},
+    {""slide"": 6, ""title"": ""Trending Tools and Technologies"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]},
+    {""slide"": 7, ""title"": ""Market Demand"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]},
+    {""slide"": 8, ""title"": ""Case Study 1"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]},
+    {""slide"": 9, ""title"": ""Case Study 2"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]},
+    {""slide"": 10, ""title"": ""Case Study 3"", ""points"": [""point1"", ""point2"", ""point3"", ""point4""]}
+  ]
+}
+
+Return only valid JSON.
+Do not include explanations, markdown, or additional text."]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="isPIIEnabled" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="isFilterPIIEnabled" Type="FieldArgument" />
+        <isactr:FieldObject Name="languageCode" Type="FieldArgument" />
+        <isactr:FieldObject Name="piiEntityCategories_array" Type="FieldArgument" />
+        <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument" />
+        <isactr:FieldObject Name="topK" Type="FieldArgument" />
+        <isactr:FieldObject Name="contextGrounding" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">None</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="_file" Type="FieldArgument" />
+        <isactr:FieldObject Name="folderKey" Type="FieldArgument" />
+        <isactr:FieldObject Name="topP" Type="FieldArgument" />
+        <isactr:FieldObject Name="indexID" Type="FieldArgument" />
+        <isactr:FieldObject Name="numberOfResults" Type="FieldArgument" />
+        <isactr:FieldObject Name="top_p" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="modelName" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">gpt-5.1-2025-11-13</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="instruction" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">You are a helpful assistant</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="max_tokens" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="temperature" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="presence_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="n" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="_stop" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_text" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[presenrationContent]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_maskedText" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_v2_sub_generateChatCompletion" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:v2_sub_generateChatCompletion_Create" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_contextGroundingCitationsString" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </isactr:ConnectorActivity>
+    <Assign DisplayName="Assign JSON Content to Content Array" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JArray">[contentArray]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JArray">[CType(Newtonsoft.Json.Linq.JObject.Parse(presenrationContent)("slides"), Newtonsoft.Json.Linq.JArray)]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap2010:Annotation.AnnotationText="Assign Filename (AF): &#xA;&#xA;Sanitizes SelectedTopic (String) by stripping all invalid filename characters using System.Text.RegularExpressions.Regex.Replace(SelectedTopic, &quot;[\\/:*?&quot;&quot;&lt;&gt;|]&quot;, &quot;&quot;) and stores the clean result in SafeFileName (String). &#xA;&#xA;This ensures the output files can be saved without OS (Operating System) path errors. &#xA;&#xA;The sanitized name is then used to construct two file paths: &#xA;&#xA;PPT (PowerPoint) → &quot;C:\Users\Azhar\Documents\UiPath\AutomatingPresentations\&quot; + SafeFileName + &quot;.pptx&quot; stored in ContentFilePath; &#xA;&#xA;DOCX (Word Document) → same base path with &quot;.docx&quot; extension — both files are named after the user's selected topic." DisplayName="Assign Filename for Document and PPT" sap:VirtualizedContainerService.HintSize="452,532" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[SafeFileName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(SelectedTopic, "[\\/:*?""&lt;&gt;|]", "")]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_23">
+          <ui:SelectFolder DisplayName="Browse For Folder" sap:VirtualizedContainerService.HintSize="450,112.66666666666667" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[SelectedFolder]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:SelectFolder>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:SelectFolder DisplayName="Browse For Folder" sap:VirtualizedContainerService.HintSize="452,112.66666666666667" sap2010:WorkflowViewState.IdRef="SelectFolder_2" SelectedFolder="[SelectedFolder]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:SelectFolder>
+    <Assign sap2010:Annotation.AnnotationText="Modify this activity into user defined Browse for Folder activity and Change Path&#xA;&#xA;From&#xA;&quot;C:\Users\Azhar\Documents\UiPath\AutomatingPresentations\&quot; + SafeFileName&#xA;&#xA;To&#xA;SelectedFolder + &quot;\&quot; + SafeFileName" sap:VirtualizedContainerService.HintSize="452,336" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[ContentFilePath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[SelectedFolder + "\" + SafeFileName]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="452,57.333333333333336" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="Writing Content to Word Document">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <p:WordApplicationScope SensitivityLabel="{x:Null}" sap2010:Annotation.AnnotationText="Word Application Scope (WAS): &#xA;&#xA;Opens or creates a MS Word Document (.docx) at the path stored in ContentFilePath (String) using SafeFileName as the filename. &#xA;&#xA;This activity provides the execution scope for all Word-related activities — any activity that reads or writes to the Word document must be placed inside this scope. &#xA;&#xA;CreateIfNotExists = True ensures a new file is created automatically if it does not already exist at the specified path." DisplayName="Word Application Scope" FilePath="[ContentFilePath + &quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="452,590" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2" SensitivityOperation="None">
+      <p:WordApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WordDocument">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+          </ActivityAction.Argument>
+          <Sequence sap2010:Annotation.AnnotationText=" For Each Slide Item (FE): &#xA;&#xA;Iterates over contentArray (JArray — JavaScript Object Notation Array) which holds all AI-generated slides parsed from presenrationContent. &#xA;&#xA;Each iteration provides one slide object as slideItem (JToken — JSON Token), containing &quot;title&quot; and &quot;points&quot; fields. &#xA;&#xA;For every slide, the title and bullet points are extracted and appended as formatted text into the Word Document (WordDocumentScope) using Append Text activity. &#xA;&#xA;Loop runs dynamically — handles any number of slides regardless of AI output length." DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,266" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each item in the contentArray:" sap:VirtualizedContainerService.HintSize="488,872" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[contentArray]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="njl:JToken">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="njl:JToken" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,749.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p:WordAppendText DisplayName="Append the slide title to the Word document." sap:VirtualizedContainerService.HintSize="452,172" sap2010:WorkflowViewState.IdRef="WordAppendText_3" Text="[item(&quot;title&quot;).ToString()]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:WordAppendText>
+                    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For each point in the current slide..." sap:VirtualizedContainerService.HintSize="452,354.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[item(&quot;points&quot;)]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="njl:JToken">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="njl:JToken" Name="point" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,222.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <p:WordAppendText DisplayName="Append the point to the Word document." sap:VirtualizedContainerService.HintSize="416,162.66666666666666" sap2010:WorkflowViewState.IdRef="WordAppendText_4" Text="[vbTab &amp; &quot;- &quot; &amp; point.ToString()]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </p:WordAppendText>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEach>
+                    <p:WordAppendText DisplayName="Add an extra new line for spacing between slides." sap:VirtualizedContainerService.HintSize="452,162.66666666666666" sap2010:WorkflowViewState.IdRef="WordAppendText_5" Text="[Environment.NewLine]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:WordAppendText>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+          </Sequence>
+        </ActivityAction>
+      </p:WordApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p:WordApplicationScope>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="452,57.333333333333336" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="Writing Content to PowerPoint Slides">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <ui:PowerPointApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" sap2010:Annotation.AnnotationText="Use PowerPoint Presentation (UPP): &#xA;&#xA;Opens or creates a PowerPoint (.pptx) file at the path constructed from SafeFileName (String) inside the project folder. &#xA;&#xA;CreateIfNotExists = True ensures a new file is automatically created if not found. &#xA;&#xA;AutoSave = True enables automatic saving during execution. &#xA;&#xA;This activity provides the execution scope for all slide-related activities — Insert Slide, Insert Text In Presentation, and Save Presentation As must all be placed inside this scope. &#xA;&#xA;The active presentation instance is accessible via the PowerPoint (IPresentationQuickHandle) variable throughout the scope." DisplayName="Use PowerPoint Presentation" sap:VirtualizedContainerService.HintSize="452,396" sap2010:WorkflowViewState.IdRef="PowerPointApplicationScope_2" PresentationPath="[ContentFilePath + &quot;.pptx&quot;]" SensitivityOperation="None">
+      <ui:PowerPointApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:IPresentationQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:IPresentationQuickHandle" Name="PowerPoint" />
+          </ActivityAction.Argument>
+          <Sequence sap2010:Annotation.AnnotationText="For Each Slide Item (FE): &#xA;&#xA;Iterates over contentArray (JArray — JavaScript Object Notation Array) parsed from presenrationContent. &#xA;&#xA;Each iteration provides one slide object as slideItem (JToken — JSON Token) containing &quot;slide&quot; (Int32 — slide number), &quot;title&quot; (String), and &quot;points&quot; (Array of Strings — bullet points). &#xA;&#xA;For every iteration: a new slide is inserted via Insert Slide, title is written via Insert Text In Presentation, and bullet points are formatted and written as content. &#xA;&#xA;Loop runs dynamically — handles any number of slides generated by the AI without hardcoding slide count." DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,282.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_21">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="newSlideIndex" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For each slide object in the deserialized list, add a new slide and populate it with the title and points." sap:VirtualizedContainerService.HintSize="452,1167.3333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[contentArray]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="njl:JToken">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="njl:JToken" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,1044.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InsertSlide InsertPosition="{x:Null}" DisplayName="Add a new slide to the PowerPoint presentation." sap:VirtualizedContainerService.HintSize="416,334" sap2010:WorkflowViewState.IdRef="InsertSlide_4" InsertType="End" InsertedAtPosition="[newSlideIndex]" LayoutName="Title and Content" Presentation="[PowerPoint]" SlideMasterName="Office Theme">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InsertSlide>
+                    <ui:InsertTextInPresentation ClearExistingText="True" DisplayName="Add the slide's title to the new slide." sap:VirtualizedContainerService.HintSize="416,330" sap2010:WorkflowViewState.IdRef="InsertTextInPresentation_3" Presentation="[PowerPoint]" ShapeName="Title 1" SlideIndex="[newSlideIndex]" Text="[item(&quot;title&quot;).ToString()]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InsertTextInPresentation>
+                    <ui:InsertTextInPresentation ClearExistingText="True" DisplayName="Combine the slide's points into a formatted string and add it to the new slide." sap:VirtualizedContainerService.HintSize="416,320.6666666666667" sap2010:WorkflowViewState.IdRef="InsertTextInPresentation_4" Presentation="[PowerPoint]" ShapeName="Content Placeholder 2" SlideIndex="[newSlideIndex]" Text="[String.Join(Environment.NewLine, item(&quot;points&quot;).[Select](Function(p) &quot;&quot; &amp; p.ToString()))]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InsertTextInPresentation>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+          </Sequence>
+        </ActivityAction>
+      </ui:PowerPointApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:PowerPointApplicationScope>
+    <ui:WriteTextFile File="{x:Null}" Output="{x:Null}" DisplayName="Write Text File" FileName="contentArray.txt" sap:VirtualizedContainerService.HintSize="452,57.333333333333336" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[contentArray.ToString()]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WriteTextFile>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="452,57.333333333333336" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="Workflow completed.">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Workflow completed.&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MessageBox>
+  </Sequence>
+</Activity>
